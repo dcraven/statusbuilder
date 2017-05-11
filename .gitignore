@@ -4,6 +4,10 @@ target/
 ### MacOS ###
 .DS_Store
 
+### Ignore Node and Node Modules ###
+frontend/src/main/frontend/node/
+frontend/src/main/frontend/node_modules
+
 ### STS ###
 .apt_generated
 .classpath
