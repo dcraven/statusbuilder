@@ -12,7 +12,7 @@ public class Report {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
-    
+
     @OneToMany(cascade = CascadeType.ALL)
     List<StatusItem> statusItemList = new ArrayList<>();
 
