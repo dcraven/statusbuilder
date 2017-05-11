@@ -12,11 +12,19 @@ public class Report {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
-
-    @OneToMany
+    
+    @OneToMany(cascade = CascadeType.ALL)
     List<StatusItem> statusItemList = new ArrayList<>();
 
-    public List<Long> getStatusItemIdList(Long id) {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<Long> getStatusItemIdList() {
         return statusItemList.stream().map(statusItem -> statusItem.getId()).collect(Collectors.toList());
     }
 
