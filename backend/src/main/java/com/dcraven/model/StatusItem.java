@@ -1,14 +1,30 @@
 package com.dcraven.model;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
+@Entity
+@Table(name = "StatusItems")
 public class StatusItem {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @NotNull
     private String summary;
+
     private String details;
     private String comments;
+
+    @NotNull
     private Date creationDate;
+
+    @NotNull
     private Date modificationDate;
+
+    @NotNull
     private StatusType status;
 
 
@@ -16,6 +32,8 @@ public class StatusItem {
         this.summary = summary;
         this.details = details;
         this.status = status;
+        this.creationDate = new Date();
+        this.modificationDate = new Date();
     }
 
     public Long getId() {
@@ -24,6 +42,7 @@ public class StatusItem {
 
     public void setId(Long id) {
         this.id = id;
+        this.modificationDate = new Date();
     }
 
     public String getSummary() {
@@ -32,6 +51,7 @@ public class StatusItem {
 
     public void setSummary(String summary) {
         this.summary = summary;
+        this.modificationDate = new Date();
     }
 
     public String getDetails() {
@@ -40,6 +60,7 @@ public class StatusItem {
 
     public void setDetails(String details) {
         this.details = details;
+        this.modificationDate = new Date();
     }
 
     public String getComments() {
@@ -48,6 +69,7 @@ public class StatusItem {
 
     public void setComments(String comments) {
         this.comments = comments;
+        this.modificationDate = new Date();
     }
 
     public Date getCreationDate() {
@@ -56,6 +78,7 @@ public class StatusItem {
 
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
+        this.modificationDate = new Date();
     }
 
     public Date getModificationDate() {
@@ -72,6 +95,7 @@ public class StatusItem {
 
     public void setStatus(StatusType status) {
         this.status = status;
+        this.modificationDate = new Date();
     }
 
     @Override

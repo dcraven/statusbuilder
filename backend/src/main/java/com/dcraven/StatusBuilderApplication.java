@@ -1,4 +1,4 @@
-package com.dcraven.statusbuilder;
+package com.dcraven;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
