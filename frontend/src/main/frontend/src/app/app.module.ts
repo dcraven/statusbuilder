@@ -6,10 +6,18 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MdSnackBarModule} from '@angular/material';
+import {RouterModule} from '@angular/router';
+import {ReportsListComponent} from '../reports/reports-list.component';
+import {NavBarComponent} from '../shared/nav-bar.component';
+import {ReportService} from '../reports/reports.service';
+import {ReportCompactListComponent} from '../reports/report-compact-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ReportsListComponent,
+    NavBarComponent,
+    ReportCompactListComponent
   ],
   imports: [
     BrowserModule,
@@ -17,8 +25,11 @@ import {MdSnackBarModule} from '@angular/material';
     HttpModule,
     MdSnackBarModule,
     BrowserAnimationsModule,
+    RouterModule.forRoot([
+      { path: 'reports', component: ReportsListComponent }
+    ])
   ],
-  providers: [MdSnackBarModule],
+  providers: [ReportService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

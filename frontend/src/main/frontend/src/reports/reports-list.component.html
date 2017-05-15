@@ -1,0 +1,8 @@
+<nav-top></nav-top>
+<div class="page-header">
+  <h2>Reports List<button style="float: right;" class="btn btn-primary">New Report</button></h2>
+
+</div>
+<div class="list-group">
+  <report-compact-item *ngFor="let report of reports" [report]="report"></report-compact-item>
+</div>

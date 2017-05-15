@@ -12,9 +12,22 @@ public class Report {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
-
+    String title;
     @OneToMany(cascade = CascadeType.ALL)
     List<StatusItem> statusItemList = new ArrayList<>();
+
+    public Report(String title, List<StatusItem> statusItemList) {
+        this.title = title;
+        this.statusItemList = statusItemList;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     public Long getId() {
         return id;
